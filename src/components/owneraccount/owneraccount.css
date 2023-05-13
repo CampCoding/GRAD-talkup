@@ -1,0 +1,108 @@
+.owneraccount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 63.2px);
+  background-image: url("../../assets/images/bgensign.jpeg");
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.owneraccount .overlay{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #d2deecc5;
+}
+.owner_form{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 500px;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  z-index: 22;
+}
+.owneraccount .owner_form h4{
+  text-transform: capitalize;
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #4763ac;
+  margin-bottom: 20px;
+}
+.owner_form form >div{
+  position: relative;
+  margin-bottom: 20px;
+}
+.owner_form form >div >svg{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.owner_form form input{
+  width: 100%;
+  height: 40px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.owner_form form >div:first-of-type input,.owner_form form >div:nth-child(2) input{
+  padding: 10px;
+  direction: rtl;
+}
+.owner_form form button{
+  width: 100%;
+  height: 40px;
+  border:none;
+  background-color: #004B75;
+  color: #e1f1fe;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.owner_form .pass{
+  position: relative;
+}
+.owner_form .pass >div{
+  position: relative;
+}
+
+
+.eye{
+  position: absolute !important;
+  right: 10px !important;
+}
+.owner_form form >div:nth-child(6) >svg:first-of-type{
+  position: absolute !important;
+  right: 10px !important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.owner_form form >div:nth-child(7) >svg:first-of-type{
+  position: absolute !important;
+  right: 10px !important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+/* .owner_form .pass >svg:first-of-type{
+  position: absolute !important;
+  top: 50%;
+  right: 10px;
+} */
+
+/* .owner_form .pass >svg:nth-child(2){
+  position: absolute !important;
+  top: 50%;
+  right: 10px;
+}
+ */

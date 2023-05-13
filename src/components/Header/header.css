@@ -1,0 +1,42 @@
+header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #7395ae;
+}
+
+header .logo img{
+  width: 60px;
+}
+header .links{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logsign{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logsign a{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+.logsign a:first-of-type{
+  background-color: #5d5c61;
+  border: none;
+  color: white;
+}
+.logsign a:last-of-type{
+  background-color: #379683;
+  border: none;
+  color: white;
+}
+header a{
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}

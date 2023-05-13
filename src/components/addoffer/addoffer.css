@@ -1,0 +1,7 @@
+.addoffer form{
+  height: 520px !important;
+  padding: 20px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

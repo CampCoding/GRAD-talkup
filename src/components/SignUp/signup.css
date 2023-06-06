@@ -1,16 +1,19 @@
-.signup{
+.signup {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background-image: url("../../assets/images/bgownersign.png");
-  background-size: cover;
+  background-image: url("../../assets/images/pexels-parviz-besharat-pur-5873299.jpg");
+  background-size: 100% 100%;
+
   background-repeat: no-repeat;
-  background-position-y:-900px ;
+  background-position: center center;
+  /* background-position-y:  */
   position: relative;
 }
+
 /* .signup::after{
   content: '';
   height: 120%;
@@ -21,7 +24,7 @@
   top: 63.4px;
   z-index: -1;
 } */
-.signup .overlay{
+.signup .overlay {
   background-color: #004a757d;
   height: 100%;
   width: 100%;
@@ -29,73 +32,88 @@
   top: 0px;
   left: 0px;
 }
-.signup >div:first-child{
+
+.signup>div:first-child {
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   z-index: 3344;
   position: relative;
+  max-width: 100%;
 }
-.signup .sign_up_eng_img >img{
+
+.signup .sign_up_eng_img>img {
   margin: auto;
   width: 100px;
 }
-.signup form{
-  width:500px;
-  padding:20px;
+
+.signup form {
+  width: 500px;
+  padding: 20px;
 }
-.signup form h4{
+
+.signup form h4 {
   text-align: left;
   margin-bottom: 5px;
   font-weight: 400;
   text-transform: capitalize;
 }
-.signup form input{
+
+.signup form input {
   width: 100%;
   height: 100%;
   padding: 10px 28px;
   border-radius: 10px;
   border: 1px solid #ccc;
   direction: ltr;
+  max-width: 100%;
 }
-.signup form >div:first-of-type input ,.signup form >div:nth-child(2) input {
+
+.signup form>div:first-of-type input,
+.signup form>div:nth-child(2) input {
   padding: 10px;
   direction: rtl;
 }
-.signup form >div{
+
+.signup form>div {
   margin-bottom: 5px;
 }
-.signup form >div >div {
+
+.signup form>div>div {
   position: relative;
   width: 100%;
   height: 40px;
 }
-.signup form >div >div >svg:first-of-type{
+
+.signup form>div>div>svg:first-of-type {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.signup form .pass{
+.signup form .pass {
   position: relative;
 }
 
-.signup form .pass >div svg:last-child{
+.signup form .pass>div svg:last-child {
   position: absolute !important;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.signup form button{
-  background: #004B75;
-border-radius: 399.228px;
-width: 100%;
-height: 40px;
-color: white;
-border: none;
-cursor: pointer;
-font-size: 22px;
+.signup form button {
+  background: #c5bac4;
+  border-radius: 399.228px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
 }

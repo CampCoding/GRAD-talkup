@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AiFillCamera, AiFillEye, AiFillEyeInvisible, AiOutlineIdcard, AiOutlineMail } from 'react-icons/ai';
 import { GoLocation } from 'react-icons/go';
 import { HiUserCircle } from 'react-icons/hi';
 import { RiLockPasswordFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './englogin.css'
 import { toast } from 'react-toastify';
 import axios from 'axios';
-const Login = () => {
+import { AppContext } from '../../context/AppContextProvider';
+const Login = () => {const {login}=useContext(AppContext)
+  const navigate=useNavigate();
   const [passshow,setpassshow]=useState(false);
   const [logindata,setlogindata]=useState({
     email:'',
@@ -15,26 +17,38 @@ const Login = () => {
   })
   const handlelogin=()=>{
     if(logindata.email===""){
-      toast.warn("enter email")
+      toast.warn("enter email",{
+        position:'bottom-right'
+      })
       return;
     }
     if(logindata.password===""){
-      toast.warn("enter password")
+      toast.warn("enter password",{
+        position:'bottom-right'
+      })
       return;
     }
     const  data_send={
       ...logindata
     }
-    axios.post("url",data_send)
+    console.log(data_send)
+    axios.post("http://127.0.0.1:8000/contractor_login/",data_send)
     .then((res)=>{
+      console.log(res)
       if(res.data.status==="success"){
-
+        //localStorage.setItem('contractor',JSON.stringify(res.data.body));
+        login(res.data.body);
+        navigate("/",{replace:true})
       }
-      else if(res.data.status==="error"){
-        toast.error(res.data.message);
+      else if(res.data.status==="faild"){
+        toast.error(res.data.body,{
+          position:'bottom-right'
+        });
       }
       else{
-        toast.error("حدث خطأ ما برجاء المحاوله مره اخرى")
+        toast.error("حدث خطأ ما برجاء المحاوله مره اخرى",{
+          position:'bottom-right'
+        })
       }
     })
   }
@@ -48,7 +62,7 @@ const Login = () => {
     <h4
       style={{
         fontSize:'20px',
-        color:'#4763ac'
+        color:'#8AA4AE'
       }}
     >Engineer/Developer</h4>
     <form
@@ -60,7 +74,11 @@ const Login = () => {
         <div>
           <h4>email</h4>
           <div className="per_img loginemail">
-            <input type="text"
+            <input
+            style={{
+              direction:'ltr'
+            }}
+            type="text"
               onChange={(e)=>{
                 setlogindata({
                   ...logindata,
@@ -74,7 +92,11 @@ const Login = () => {
         <div className='pass loginpass'>
           <h4>password</h4>
           <div className="per_img">
-            <input type={`${passshow?'text':'password'}`}
+            <input
+              style={{
+                direction:'ltr'
+              }}
+            type={`${passshow?'text':'password'}`}
               onChange={(e)=>{
                 setlogindata({
                   ...logindata,
@@ -101,17 +123,25 @@ const Login = () => {
             }
           </div>
         </div>
-        <button>
+        <button 
+                className='gradiant'
+        style={{
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center',
+          marginTop:'10px'
+        }}>
           log in
         </button>
         <Link
           style={{
-            display:'block',
+            display:'flex',alignItems:'center',justifyContent:'center',
             marginTop:'20px',
             textDecoration:'none',
             cursor:'pointer',
             textTransform:'capitalize',
-            fontSize:'20px'
+            fontSize:'20px',
+            color:'#8AA4AE'
           }}
         to={"/owlogin"}>log in as owner account</Link>
     </form>

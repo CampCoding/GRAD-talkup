@@ -1,18 +1,18 @@
-footer{
+footer {
   position: relative;
   width: 100%;
   margin-top: 50px;
   padding: 20px 50px;
   display: flex;
-  background: #557a95;
+  background: #379668;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   text-align: center;
 }
-footer .social-icon ,
-footer .menu
-{
+
+footer .social-icon,
+footer .menu {
   position: relative;
   display: flex;
   justify-content: center;
@@ -26,14 +26,14 @@ footer .menu li {
   list-style: none;
 }
 
-footer .social-icon li{
+footer .social-icon li {
   color: white;
   margin: 0 10px;
   display: inline-block;
   transition: 0.5;
 }
 
-footer .menu li a{
+footer .menu li a {
   font-size: 1.2em;
   color: white !important;
   margin: 0 10px;
@@ -46,58 +46,70 @@ footer .menu li a{
   text-decoration: none;
   opacity: 0.75;
 }
-footer .menu li a:hover{
+
+footer .menu li a:hover {
   opacity: 1;
 }
 
-footer .social-icon li:hover{
+footer .social-icon li:hover {
   transform: translateY(-10px);
   -webkit-transform: translateY(-10px);
   -moz-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   -o-transform: translateY(-10px);
 }
-p{
+
+p {
   text-align: center;
   color: white;
 }
-.social-icon li{
+
+.social-icon li {
   font-size: 14px;
   padding: 5px 10px;
   background: #303030 !important;
   color: white !important;
   border-radius: 50%;
 }
-.row{
+
+.row {
   display: flex;
 }
-.row .col-md-3 >h5{
-  color: wheat;
+
+.row .col-md-3>h5 {
+  color: #dedcdc;
   text-transform: uppercase;
 }
-.row span{
+
+.row span {
   color: white !important;
 }
-.colu-e  input{
-  background-color: #c1d7ef !important;
+
+.colu-e input {
+  background-color: #969dAA !important;
   color: white;
   outline: none;
   border: none;
   padding: 10px;
   margin-bottom: 10px;
+  border: 5px 0px 5px 0px !important;
 }
-.colu-e  input::placeholder{
+
+.colu-e input::placeholder {
   color: white;
 }
-.colu-e button{
-  background-color: peru;
-  color: white;    outline: none;
+
+.colu-e button {
+  background-color: #191d23;
+  color: white;
+  outline: none;
   border: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 0px;
 
 }
-.social-icon{
+
+.social-icon {
   border-bottom: 1px solid gray;
   display: flex;
   align-items: center;
@@ -106,6 +118,6 @@ p{
   padding: 10px 0px;
 }
 
-.social-icon >a >svg{
+.social-icon>a>svg {
   font-size: 20px;
 }

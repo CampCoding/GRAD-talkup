@@ -42,7 +42,7 @@ const MyBuilding = ({building,fun}) => {
               borderRadius:'10px',
               border:'none',
               color:'white',
-              backgroundColor:'#379683',
+              backgroundColor:'#969daa',
             }}
           >offers</button>
         </div>

@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './ownerlogin.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiFillEye, AiFillEyeInvisible, AiOutlineMail } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { AppContext } from '../../context/AppContextProvider';
 const OwnerLogin = () => {
+  const {owadlogin,ownerlogin}=useContext(AppContext);
+  const navigate=useNavigate();
   const [passshow,setpassshow]=useState(false);
   const [logindata,setlogindata]=useState({
     email:'',
@@ -13,26 +16,42 @@ const OwnerLogin = () => {
   })
   const handlelogin=()=>{
     if(logindata.email===""){
-      toast.warn("enter email")
+      toast.warn("enter email",{
+        position:'bottom-right'
+      })
       return;
     }
     if(logindata.password===""){
-      toast.warn("enter password")
+      toast.warn("enter password",{
+        position:'bottom-right'
+      })
       return;
     }
     const  data_send={
       ...logindata
     }
-    axios.post("url",data_send)
+    axios.post("http://127.0.0.1:8000/building_owner_login/",data_send)
     .then((res)=>{
+      console.log(res)
       if(res.data.status==="success"){
+        toast.success("success",{
+          position:'bottom-right'
+        });
+        owadlogin(res.data.body);
+        ownerlogin(res.data.body);
+        localStorage.setItem("owner",JSON.stringify(res.data.body));
+        navigate("/",{replace:true});
 
       }
-      else if(res.data.status==="error"){
-        toast.error(res.data.message);
+      else if(res.data.status==="faild"){
+        toast.error(res.data.body,{
+          position:'bottom-right'
+        });
       }
       else{
-        toast.error("حدث خطأ ما برجاء المحاوله مره اخرى")
+        toast.error("حدث خطأ ما برجاء المحاوله مره اخرى",{
+          position:'bottom-right'
+        })
       }
     })
   }
@@ -43,8 +62,11 @@ const OwnerLogin = () => {
     <h4
       style={{
         fontSize:'20px',
-        color:'#4763ac',
+        color:'#8AA4AE',
         paddingTop:'20px'
+      }}
+      onClick={()=>{
+        navigate("")
       }}
     >log in as owner account</h4>
     <form
@@ -56,7 +78,11 @@ const OwnerLogin = () => {
         <div>
           <h4>email</h4>
           <div className="per_img loginemail">
-            <input type="text"
+            <input
+              style={{
+                direction:'ltr'
+              }}
+              type="text"
               onChange={(e)=>{
                 setlogindata({
                   ...logindata,
@@ -70,7 +96,11 @@ const OwnerLogin = () => {
         <div className='pass loginpass'>
           <h4>password</h4>
           <div className="per_img">
-            <input type={`${passshow?'text':'password'}`}
+            <input
+              style={{
+                direction:'ltr'
+              }}
+              type={`${passshow?'text':'password'}`}
               onChange={(e)=>{
                 setlogindata({
                   ...logindata,
@@ -97,7 +127,9 @@ const OwnerLogin = () => {
             }
           </div>
         </div>
-        <button>
+        <button 
+                      className='gradiant'
+                      >
           log in
         </button>
     </form>

@@ -1,0 +1,267 @@
+container {
+  margin: auto;
+  margin-top: 2rem;
+  /* Add top margin */
+  margin-bottom: 2rem;
+  /* Add bottom margin */
+  width: 40%;
+  padding: 20px;
+  border: 1px solid #000000;
+  background-color: #cfdadd;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  position: relative;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 20px;
+  height: 50px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: rgb(255, 255, 255);
+}
+
+.nav-links a:hover {
+  color: #2a63df;
+}
+
+p {
+  color: #000000;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 20px 10px;
+  max-width: 100vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 90px;
+}
+
+.auth-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  position: absolute;
+  top: 0%;
+  margin-right: 20px;
+}
+
+.auth-links a:hover {
+  color: #2a63df;
+}
+
+.signup-btn {
+  background-color: #000000;
+  right: 120px;
+}
+
+.login-btn {
+  background-color: #000000;
+  right: 200px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, #8AA4AE, #6997a7);
+  padding: 20px;
+  color: white;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.footer-section {
+  width: 30%;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+button,
+input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000000;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 30px;
+}
+ */
+button:hover,
+.filter button[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+/*
+input[type="text"],
+input[type="password"],
+.filter select,
+.filter input[type="month"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+} */
+
+button,
+.filter button[type="submit"] {
+  background-color: #000000;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelbtn {
+  background-color: #000000;
+}
+
+.signupbtn {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 0;
+  color: #000000;
+  margin-top: 50px;
+}
+
+h2 {
+  text-align: left;
+  font-size: 26px;
+  margin-top: 0;
+  color: #000000;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+input[type="checkbox"] {
+  margin-top: 20px;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.filter label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter button[type="submit"] {
+  background-color: #000000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.social-media-icons div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+}
+
+.how-to-bid {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  color: #000;
+  text-align: left;
+}
+
+.how-to-bid ol {
+  margin-left: 20px;
+}
+
+.how-to-bid ol li {
+  margin-bottom: 10px;
+}
+
+.how-to-bid a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.how-to-bid a:hover {
+  color: #f44336;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service {
+  flex: 1;
+  margin: 15px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+}

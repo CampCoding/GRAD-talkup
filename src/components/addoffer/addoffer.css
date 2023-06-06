@@ -1,7 +1,18 @@
-.addoffer form{
+.addoffer form {
   height: 520px !important;
   padding: 20px !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  justify-content: center;
+}
+
+.addoffer form input {}
+
+.addoffer>h4 {
+  color: #c5bac4 !important;
+}
+
+.addoffer button {
+  margin-top: 60px !important;
 }

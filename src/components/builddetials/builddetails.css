@@ -1,51 +1,60 @@
-.builddetails_div{
-  height: 100vh;
+.builddetails_div {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
-.builddetails_div .buildingdetails{
+
+.builddetails_div .buildingdetails {
   width: 700px;
-  min-height: 400px;
+  min-height: 300px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 20px;
   border-radius: 10px;
 }
-.buildingdetails img{
+
+.buildingdetails img {
   width: 100%;
-  height: 100px;
+  height: 150px;
 }
 
-.buildingdetails .buildingdetails_text{
+.buildingdetails .buildingdetails_text {
   text-align: center;
 }
-.buildingdetails_text h3{
+
+.buildingdetails_text h3 {
   margin: 10px 0px;
   text-transform: capitalize;
-  color: #379683;
+  color: #969daa;
 }
 
-.buildingdetails_text span{
+.buildingdetails_text span {
   color: #5d5c61;
   margin-bottom: 10px;
   display: block;
 }
-.buildingdetails_text h2{
+
+.buildingdetails_text h2 {
   text-transform: capitalize;
   margin-bottom: 10px;
 }
-.buildingdetails_text >div{
+
+.buildingdetails_text>div {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   margin-top: 15px;
 }
-.buildingdetails_text >div >p{
+
+.buildingdetails_text>div>p {
   margin: 0px;
 }
-.buildingdetails_text button{
-  background-color: #379683;
+
+.buildingdetails_text button {
+  background-color: #969daa;
   color: white;
   border: none;
   padding: 10px;

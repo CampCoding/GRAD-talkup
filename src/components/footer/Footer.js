@@ -42,7 +42,9 @@ export default function Footer() {
         </div>
 
         <div className="colu-e g-0 p-0 m-0">
-        <input type="email" placeholder='Email Address' />
+        <input style={{
+          maxWidth:'100%'
+        }} type="email" placeholder='Email Address' />
         <button >Send</button>
         </div>
       </div>

@@ -1,53 +1,72 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './owneraccount.css'
 import axios from 'axios'
 import {FaUserCircle} from 'react-icons/fa'
 import {GoLocation} from 'react-icons/go'
 import {BiCreditCard} from 'react-icons/bi'
 import {BsFillImageFill, BsFillShieldLockFill} from 'react-icons/bs'
-import {AiFillIdcard} from 'react-icons/ai'
+import {AiFillIdcard, AiOutlineMail, AiOutlinePhone} from 'react-icons/ai'
 import { toast } from 'react-toastify'
 import {Spin} from 'antd'
-const OwnerAccount = () => {
+import { AppContext } from '../context/AppContextProvider'
+import { useNavigate } from 'react-router'
+const OwnerAccount = () => {const navigate=useNavigate();
+  const {owadlogin,ownerlogin}=useContext(AppContext);
   const [signloading,setsignloading]=useState(false);
   const [ownersign,setownersign]=useState({
-    per_image:'',
-    ident_image:'',
-    name:'',
-    location:'',
-    ident_num:'',
+    owner_name:'',
+    email:'',
+    owner_phone:'',
     password:'',
+    address:'',
+    identify_number:'',
+    identify_image:'',
+
   })
 
   const [confpass,setconfpass]=useState("");
 
   const handlesign=()=>{
-    if(ownersign.per_image==""){
-      toast.warn("enter personal image");
+    if(ownersign.identify_image==""){
+      toast.warn("enter identify image",{
+        position:'bottom-right'
+      });
       return ;
     }
-    if(ownersign.ident_image==""){
-      toast.warn("enter identify image");
+    if(ownersign.owner_name==""){
+      toast.warn("enter your name",{
+        position:'bottom-right'
+      });
       return ;
     }
-    if(ownersign.name==""){
-      toast.warn("enter your name");
+    if(ownersign.owner_phone==""){
+      toast.warn("enter your phone",{
+        position:'bottom-right'
+      });
       return ;
     }
-    if(ownersign.location==""){
-      toast.warn("enter your location");
+    if(ownersign.address==""){
+      toast.warn("enter your address",{
+        position:'bottom-right'
+      });
       return ;
     }
-    if(ownersign.ident_num==""){
-      toast.warn("enter your identify number");
+    if(ownersign.identify_number==""){
+      toast.warn("enter your identify number",{
+        position:'bottom-right'
+      });
       return ;
     }
-    if(ownersign.ident_num*0!=0){
-      toast.warn("make sure that identify number does not have any character than numbers");
+    if(ownersign.identify_number*0!=0){
+      toast.warn("make sure that identify number does not have any character than numbers",{
+        position:'bottom-right'
+      });
       return;
     }
     if(ownersign.password==""){
-      toast.warn("enter your password");
+      toast.warn("enter your password",{
+        position:'bottom-right'
+      });
       return ;
     }
     if(confpass==""){
@@ -55,23 +74,42 @@ const OwnerAccount = () => {
       return ;
     }
     if(confpass!==ownersign.password){
-      toast.warn("make sure that password is smiler to confirm password");
+      toast.warn("make sure that password is smiler to confirm password",{
+        position:'bottom-right'
+      });
     }
-    const data_send={
+/*     const data_send={
       ...ownersign
-    }
+    } */
+    const formdata=new FormData();
+    formdata.append('owner_name',ownersign.owner_name);
+    formdata.append('owner_phone',ownersign.owner_phone);
+    formdata.append('email',ownersign.email);
+    formdata.append('password',ownersign.password);
+    formdata.append('address',ownersign.address);
+    formdata.append('identify_number',ownersign.identify_number);
+    formdata.append('identify_image',ownersign.identify_image);
     setsignloading(true);
-    /* axios.post("url",data_send)
+    //console.log(data_send)
+    axios.post("http://127.0.0.1:8000/register_building_owner/",formdata)
     .then((res)=>{
+      console.log(res)
       if(res.data.status==="success"){
-
+        //console.log(res.data.body);
+        //alert(JSON.stringify(res.data.body));
+        owadlogin(res.data.body);
+        ownerlogin(res.data.body)
+        localStorage.setItem("owner",JSON.stringify(res.data.body))
+        navigate("/",{replace:true});
       }
-      else if(res.data.status==="error"){
-        toast.error(res.data.message);
+      else if(res.data.status==="faild"){
+        toast.error(res.data.body,{
+          position:'bottom-right'
+        });
       }
     }).finally(()=>{
       setsignloading(false);
-    }) */
+    })
   }
   useEffect(()=>{
     window.scrollTo(0,0)
@@ -79,7 +117,7 @@ const OwnerAccount = () => {
   return (
     <div className='owneraccount'>
       <div className="owner_form">
-        <h4>Create an owner account</h4>
+        <h4 className='color'>Create an owner account</h4>
         <form
           onSubmit={(e)=>{
             e.preventDefault();
@@ -88,21 +126,10 @@ const OwnerAccount = () => {
         >
           <div className="input">
             <input type="file" placeholder='name'
-            onChange={(e)=>{
-              setownersign({
-                ...ownersign,
-                per_image:e.target.value,
-              })
-            }}
-            />
-            <BsFillImageFill/>
-          </div>
-          <div className="input">
-            <input type="file" placeholder='name'
               onChange={(e)=>{
                 setownersign({
                   ...ownersign,
-                  ident_image:e.target.value,
+                  identify_image:e.target.value,
                 })
               }}
             />
@@ -113,18 +140,40 @@ const OwnerAccount = () => {
             onChange={(e)=>{
               setownersign({
                 ...ownersign,
-                name:e.target.value,
+                owner_name:e.target.value,
               })
             }}
             />
             <FaUserCircle/>
           </div>
           <div className="input">
-            <input type="text" placeholder='location'
+            <input type="text" placeholder='phone'
             onChange={(e)=>{
               setownersign({
                 ...ownersign,
-                location:e.target.value,
+                owner_phone:e.target.value,
+              })
+            }}
+            />
+            <AiOutlinePhone/>
+          </div>
+          <div className="input">
+            <input type="text" placeholder='email'
+            onChange={(e)=>{
+              setownersign({
+                ...ownersign,
+                email:e.target.value,
+              })
+            }}
+            />
+            <AiOutlineMail/>
+          </div>
+          <div className="input">
+            <input type="text" placeholder='address'
+            onChange={(e)=>{
+              setownersign({
+                ...ownersign,
+                address:e.target.value,
               })
             }}
             />
@@ -135,7 +184,7 @@ const OwnerAccount = () => {
             onChange={(e)=>{
               setownersign({
                 ...ownersign,
-                ident_num:e.target.value,
+                identify_number:e.target.value,
               })
             }}
             />
@@ -170,7 +219,14 @@ const OwnerAccount = () => {
                 <Spin/>
               </div>
             ):(
-              <button>sign up</button>
+              <button
+              className='gradiant'
+                style={{
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center'
+                }}
+              >sign up</button>
             )
           }
         </form>

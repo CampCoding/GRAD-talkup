@@ -1,22 +1,29 @@
-.owneraccount{
+.owneraccount {
   display: flex;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 63.2px);
-  background-image: url("../../assets/images/bgensign.jpeg");
-  background-size: cover;
-  position: relative;
+  background-image: url("../../assets/images/pexels-parviz-besharat-pur-5873299.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-position: center center;
+  /* background-position-y:  */
+  position: relative;
 }
-.owneraccount .overlay{
+
+.owneraccount .overlay {
   position: absolute;
   left: 0px;
   top: 0px;
   height: 100%;
   width: 100%;
-  background-color: #d2deecc5;
+  background-color: #004a757d;
 }
-.owner_form{
+
+.color{
+  color: #8AA4AE !important;
+}
+.owner_form {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 500px;
   max-width: 100%;
@@ -25,26 +32,29 @@
   background-color: white;
   z-index: 22;
 }
-.owneraccount .owner_form h4{
+
+.owneraccount .owner_form h4 {
   text-transform: capitalize;
   font-size: 22px;
   margin-bottom: 10px;
   text-align: center;
-  color: #4763ac;
+  color: #c5bac4;
   margin-bottom: 20px;
 }
-.owner_form form >div{
+
+.owner_form form>div {
   position: relative;
   margin-bottom: 20px;
 }
-.owner_form form >div >svg{
+
+.owner_form form>div>svg {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.owner_form form input{
+.owner_form form input {
   width: 100%;
   height: 40px;
   padding: 20px 30px;
@@ -52,44 +62,54 @@
   border: 1px solid #ccc;
   outline: none;
 }
-.owner_form form >div:first-of-type input,.owner_form form >div:nth-child(2) input{
+
+.owner_form form>div:first-of-type input,
+.owner_form form>div:nth-child(2) input {
   padding: 10px;
   direction: rtl;
 }
-.owner_form form button{
+
+.owner_form form button {
   width: 100%;
   height: 40px;
-  border:none;
-  background-color: #004B75;
+  border: none;
+  background-color: #c5bac4;
   color: #e1f1fe;
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
 }
 
-.owner_form .pass{
+.owner_form .pass {
   position: relative;
 }
-.owner_form .pass >div{
+
+.owner_form .pass>div {
   position: relative;
 }
 
 
-.eye{
+.eye {
   position: absolute !important;
   right: 10px !important;
 }
-.owner_form form >div:nth-child(6) >svg:first-of-type{
+
+.owner_form form>div:nth-child(6)>svg:first-of-type {
   position: absolute !important;
   right: 10px !important;
   top: 50%;
   transform: translateY(-50%);
 }
-.owner_form form >div:nth-child(7) >svg:first-of-type{
+
+.owner_form form>div:nth-child(7)>svg:first-of-type {
   position: absolute !important;
   right: 10px !important;
   top: 50%;
   transform: translateY(-50%);
+}
+.gradiant{
+  background: linear-gradient(to right, #57707A, #C2DDE8);
+
 }
 
 

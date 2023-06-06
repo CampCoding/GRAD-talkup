@@ -16,15 +16,21 @@ const Contact = () => {
   }
   const handlecontact=()=>{
     if(contdata.name==""){
-      toast.warn("enter your name")
+      toast.warn("enter your name",{
+        position:'bottom-right'
+      })
       return;
     }
     if(contdata.email==""||!valiedemail(contdata.email)){
-      toast.warn("enter your email")
+      toast.warn("enter your email",{
+        position:'bottom-right'
+      })
       return;
     }
     if(contdata.message==""){
-      toast.warn("enter your message")
+      toast.warn("enter your message",{
+        position:'bottom-right'
+      })
       return;
     }
 
@@ -42,6 +48,7 @@ const Contact = () => {
             }}
           >
           <input
+            style={{}}
             onChange={(e)=>{
               setcontdata({...contdata,name:e.target.value})
             }}
@@ -72,7 +79,7 @@ const Contact = () => {
               }} src={require("../../assets/images/email.png")} alt="" />
             </a>
           </div>
-          <button>send</button>
+          <button style={{display:'flex',alignItems:'center',justifyContent:'center'}}>send</button>
           </form>
         </div>
       </div>

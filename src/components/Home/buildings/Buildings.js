@@ -5,96 +5,83 @@ import axios from 'axios';
 import { json } from 'react-router';
 const Buildings = () => {
   const [img,setimg]=useState("");
-  const updata=()=>{
-    const data_send={
-      user_name:'abdu',
-      user_email:'pp@gmail.com',
-      user_password:'ppp',
-    }
-    console.log(data_send)
-    axios.post("https://medcine1231.000webhostapp.com/user/user_sign_up.php",JSON.stringify(data_send))
-    .then((res)=>{
-      console.log(res.data);
-    })
-  }
-  useEffect(()=>{
-    updata();
-  },[])
+
   const [buildings,setbuildings]=useState([
     {
       id:0,
-      image:require("../../../assets/images/bu1.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui1.webp"),
+      company_name:'EMAAR',
       rate:2,
-      location:'cairo',
+      location:'New Cairo',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right Do not pay or transfer money unless you see the product well'
     },
     {
       id:1,
-      image:require("../../../assets/images/bu2.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui2.webp"),
+      company_name:'Egypt Holding',
       rate:3,
-      location:'giza',
+      location:'Sheikh Zayed',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer      Check the product well before you buy and make sure that the price is right  Do not pay or transfer money unless you see the product well'
 
     },
     {
       id:2,
-      image:require("../../../assets/images/bu3.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui3.webp"),
+      company_name:'BYOTAT',
       rate:5,
-      location:'luxor',
+      location:'Zamalek',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right Do not pay or transfer money unless you see the product well'
     },
     {
       id:3,
-      image:require("../../../assets/images/unsplash_5fNmWej4tAA.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui4.webp"),
+      company_name:'U for U',
       rate:3,
-      location:'gharbia',
+      location:'Maadi',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Your safety matters to us Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right  Do not pay or transfer money unless you see the product well'
     },
     {
       id:4,
-      image:require("../../../assets/images/unsplash_ESZRBtkQ_f8.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui5.webp"),
+      company_name:'Hassan Allam Properties',
       rate:4,
-      location:'aswan',
+      location:'Garden City',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right not pay or transfer money unless you see the product well'
     },
     {
       id:5,
-      image:require("../../../assets/images/bu3.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui6.webp"),
+      company_name:'DMG',
       rate:1,
-      location:'alex',
+      location:'Kattameya Heights',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right Do not pay or transfer money unless you see the product well'
     },
     {
       id:6,
-      image:require("../../../assets/images/bu1.png"),
-      company_name:'company name',
+      image:require("../../../assets/images/bui7.webp"),
+      company_name:'Uni Tech',
       rate:4,
-      location:'alex',
+      location:'Mouhandisine',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right Do not pay or transfer money unless you see the product well'
     },
     {
       id:7,
       image:require("../../../assets/images/bu2.png"),
-      company_name:'company name',
+      company_name:'CBRE',
       rate:3,
-      location:'alex',
+      location:'Agouza',
       loverstatus:false,
-      builddetails:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis possimus blanditiis culpa deleniti aut. Blanditiis provident neque incidunt eveniet, consectetur dolorem error rem, cum facere et quibusdam iusto explicabo'
+      builddetails:'Meet the seller in a public place such as the metro, malls or petrol stations Take someone with you while you are going to meet the seller or the buyer Check the product well before you buy and make sure that the price is right Do not pay or transfer money unless you see the product well'
     },
   ])
+  const [allbuildings,setallbuilding]=useState([]);
 /*   const buildings=[
     {
       id:0,
@@ -146,7 +133,7 @@ const Buildings = () => {
     },
   ] */
   const handleaddtolove=(id)=>{
-    console.log("jdkjd")
+    //console.log("jdkjd")
     buildings.map((item,index)=>{
       if(item.id==id){
         return {...item,loverstatus:!item.loverstatus}
@@ -154,23 +141,65 @@ const Buildings = () => {
       else return {...item}
     })
   }
+  const getbuildings=()=>{
+    axios.get("http://127.0.0.1:8000/GetAllprojects")
+    .then((res)=>{
+      //console.log(res.data);
+      setallbuilding(res.data);
+    })
+  }
+  useEffect(()=>{
+    getbuildings();
+  },[])
   return (
     <div>
       <div className="buildings">
         {
-          buildings.map((item,index)=>{
-            return (<Building building={item} fun={handleaddtolove}/>)
+          allbuildings.map((item,index)=>{
+            return (<Building building={item}
+
+/*                lovefunc={id=>{
+            console.log(id);
+              const newdata=buildings.map((it,ind)=>{
+                if(it.id==id){
+                  return {...it,loverstatus:!it.loverstatus}
+                }
+                else return {...it};
+              })
+              setbuildings(newdata);
+            }} */
+
+          />)
           })
         }
       </div>
-{/*       <input type="file" onChange={(e)=>{
-        setimg(e.target.files[0]);
-      }}/>
-      <button onClick={()=>{
-        updata();
-      }}>up</button> */}
+
     </div>
   )
 }
 
 export default Buildings
+
+/*
+  const updata=()=>{
+    const data_send={
+      user_name:'abdu',
+      user_email:'pp@gmail.com',
+      user_password:'ppp',
+    }
+    console.log(data_send)
+    axios.post("https://medcine1231.000webhostapp.com/user/user_sign_up.php",JSON.stringify(data_send))
+    .then((res)=>{
+      console.log(res.data);
+    })
+  }
+  useEffect(()=>{
+    updata();
+  },[])
+
+<input type="file" onChange={(e)=>{
+        setimg(e.target.files[0]);
+      }}/>
+      <button onClick={()=>{
+        updata();
+      }}>up</button> */

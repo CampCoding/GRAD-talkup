@@ -1,13 +1,17 @@
-.login{
+.login {
   height: calc(100vh - 63.4px);
 }
 
-.loginemail input{
-  padding:10px 30px !important;
+.loginemail input {
+  padding: 10px 30px !important;
   text-align: left;
 }
 
-.loginpass input{
-  padding:10px 30px !important;
+.loginpass input {
+  padding: 10px 30px !important;
   text-align: left;
+}
+.gradiant{
+  color: linear-gradient(to right, #57707A, #C2DDE8) !important;
+
 }
